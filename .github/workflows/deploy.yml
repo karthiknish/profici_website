@@ -21,7 +21,7 @@ jobs:
     - name: Deploy to WHM server
       env:
         HOST: 87.247.245.194
-        USERNAME: profici
+        USERNAME: proficico
         PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         echo "$PRIVATE_KEY" > id_dsa
