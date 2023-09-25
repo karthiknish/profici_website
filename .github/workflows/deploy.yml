@@ -1,0 +1,31 @@
+name: Deploy Next.js App
+
+on:
+  push:
+    branches:
+      - main  # Trigger workflow on push to the main branch
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Install dependencies and build
+      run: |
+        npm install
+        npm run build
+        
+    - name: Deploy to WHM server
+      env:
+        HOST: 87.247.245.194
+        USERNAME: proficico
+        PRIVATE_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
+      run: |
+        echo "$PRIVATE_KEY" > private_key.pem
+        chmod 600 private_key.pem
+        rsync -avzr -e "ssh -i private_key.pem -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' ./ $USERNAME@$HOST:/path/to/your/app
+        ssh -i private_key.pem -o StrictHostKeyChecking=no $USERNAME@$HOST "cd /path/to/your/app && npm install && npm run start"
+        rm -f private_key.pem
