@@ -17,6 +17,7 @@ jobs:
       run: |
         npm install
         npm run build
+        npm run export
         
     - name: Deploy to WHM server
       env:
@@ -26,6 +27,5 @@ jobs:
       run: |
         echo "$PRIVATE_KEY" > id_dsa
         chmod 600 id_dsa
-        rsync -avzr -e "ssh -i id_dsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' ./ $USERNAME@$HOST:/home/$USERNAME/public_html/staging.profici.co.uk
-        ssh -i id_dsa -o StrictHostKeyChecking=no $USERNAME@$HOST "cd /home/$USERNAME/staging.profici.co.uk/profici2 && npm install && npm run start"
+        rsync -avzr -e "ssh -i id_dsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' out/ $USERNAME@$HOST:/home/$USERNAME/staging.profici.co.uk/profici2
         rm -f id_dsa
