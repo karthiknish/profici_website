@@ -22,7 +22,7 @@ jobs:
       env:
         HOST: 87.247.245.194
         USERNAME: proficico
-        PRIVATE_KEY: ${{ secrets.SSH_PUBLIC_KEY }}
+        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
         echo "$PRIVATE_KEY" > private_key.pem
         chmod 600 private_key.pem
