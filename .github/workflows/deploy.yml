@@ -24,8 +24,8 @@ jobs:
         USERNAME: profici
         PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
       run: |
-        echo "$PRIVATE_KEY" > id_rsa
-        chmod 600 id_rsa
-        rsync -avzr -e "ssh -i id_rsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' ./ $USERNAME@$HOST:/home/$USERNAME/public_html/staging.profici.co.uk
-        ssh -i id_rsa -o StrictHostKeyChecking=no $USERNAME@$HOST "cd /home/$USERNAME/public_html/staging.profici.co.uk && npm install && npm run start"
-        rm -f id_rsa
+        echo "$PRIVATE_KEY" > id_dsa
+        chmod 600 id_dsa
+        rsync -avzr -e "ssh -i id_dsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' ./ $USERNAME@$HOST:/home/$USERNAME/public_html/staging.profici.co.uk
+        ssh -i id_dsa -o StrictHostKeyChecking=no $USERNAME@$HOST "cd /home/$USERNAME/public_html/staging.profici.co.uk && npm install && npm run start"
+        rm -f id_dsa
