@@ -27,5 +27,5 @@ jobs:
         echo "$PRIVATE_KEY" > id_dsa
         chmod 600 id_dsa
         rsync -avzr -e "ssh -i id_dsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' ./ $USERNAME@$HOST:/home/$USERNAME/public_html/staging.profici.co.uk
-        ssh -i id_dsa -o StrictHostKeyChecking=no $USERNAME@$HOST "cd /home/$USERNAME/public_html/staging.profici.co.uk && npm install && npm run start"
+        ssh -i id_dsa -o StrictHostKeyChecking=no $USERNAME@$HOST "cd /home/$USERNAME/staging.profici.co.uk/profici2 && npm install && npm run start"
         rm -f id_dsa
