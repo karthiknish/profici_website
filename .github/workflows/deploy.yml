@@ -3,29 +3,29 @@ name: Deploy Next.js App
 on:
   push:
     branches:
-      - main  # Trigger workflow on push to the main branch
+      - main # Trigger workflow on push to the main branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    
+
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-      
-    - name: Install dependencies and build
-      run: |
-        npm install
-        npm run build
-        npm run export
-        
-    - name: Deploy to WHM server
-      env:
-        HOST: 87.247.245.194
-        USERNAME: proficico
-        PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-      run: |
-        echo "$PRIVATE_KEY" > id_dsa
-        chmod 600 id_dsa
-        rsync -avzr -e "ssh -i id_dsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' out/ $USERNAME@$HOST:/home/$USERNAME/staging.profici.co.uk/profici2
-        rm -f id_dsa
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install dependencies and build
+        run: |
+          npm install
+          npm run build
+          npm run export
+
+      - name: Deploy to WHM server
+        env:
+          HOST: 87.247.245.194
+          USERNAME: proficico
+          PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          echo "$PRIVATE_KEY" > id_dsa
+          chmod 600 id_dsa
+          rsync -avzr -e "ssh -i id_dsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' out/ $USERNAME@$HOST:/home/$USERNAME/staging.profici.co.uk/profici
+          rm -f id_dsa
