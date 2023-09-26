@@ -21,10 +21,10 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="flex items-center space-x-4 z-10">
+        <div className="flex items-center space-x-4 ">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-white"
+            className="lg:hidden text-white z-20"
           >
             {isOpen ? (
               <AiOutlineClose size={24} />
@@ -33,6 +33,13 @@ const Navbar = () => {
             )}
           </button>
           <div className={`hidden lg:flex space-x-4`}>
+            <Link href="/">
+              <img
+                src="/Proficiwhite.svg"
+                alt="Profici Logo"
+                className="h-8 w-auto"
+              />
+            </Link>
             {navLinks.map((link) => (
               <Link
                 className="text-white hover:text-gray-300"
@@ -44,6 +51,13 @@ const Navbar = () => {
             ))}
           </div>
         </div>
+        <Link href="/">
+          <img
+            src="/Proficiwhite.svg"
+            alt="Profici Logo"
+            className="h-8 w-auto"
+          />
+        </Link>
         <motion.button
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -55,7 +69,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 bg-gray-800 bg-opacity-95 flex flex-col items-center justify-center lg:hidden"
+            className="fixed inset-0 z-10 bg-gray-800 bg-opacity-95 flex flex-col items-center justify-center lg:hidden"
             initial="closed"
             animate="open"
             exit="closed"
