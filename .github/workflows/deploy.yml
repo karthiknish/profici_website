@@ -27,5 +27,5 @@ jobs:
       run: |
         echo "$PRIVATE_KEY" > id_dsa
         chmod 600 id_dsa
-        rsync -avzr -e "ssh -i id_dsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' out/ $USERNAME@$HOST:/home/$USERNAME/staging.profici.co.uk/profici2
+        rsync -avzr -e "ssh -i id_dsa -o StrictHostKeyChecking=no" --exclude '.git/' --exclude 'node_modules/' out/ $USERNAME@$HOST:/home/$USERNAME/staging.profici.co.uk/profici
         rm -f id_dsa
