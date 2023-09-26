@@ -1,4 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { basePath: "/staging.profici.co.uk", assetPrefix: "./" };
+const nextConfig = { assetPrefix: "./" };
 
 module.exports = nextConfig;
