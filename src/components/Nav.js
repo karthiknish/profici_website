@@ -35,7 +35,7 @@ const Navbar = () => {
           <div className={`hidden lg:flex space-x-4`}>
             <Link href="/">
               <img
-                src="/Proficiwhite.svg"
+                src="https://profici.co.uk/wp-content/uploads/2022/05/ProficiWhite.svg"
                 alt="Profici Logo"
                 className="h-8 w-auto"
               />
@@ -53,7 +53,7 @@ const Navbar = () => {
         </div>
         <Link className="lg:hidden" href="/">
           <img
-            src="/Proficiwhite.svg"
+            src="https://profici.co.uk/wp-content/uploads/2022/05/ProficiWhite.svg"
             alt="Profici Logo"
             className="h-8 w-auto"
           />

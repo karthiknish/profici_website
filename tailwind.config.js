@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const themeData = require("./theme.json");
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -14,18 +15,41 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        signika: ["Signika", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
       fontSize: {
-        h1: "2.5rem",
-        h2: "2.25rem",
-        h3: "2rem",
-        h4: "1.75rem",
-        h5: "1.5rem",
-        h6: "1.25rem",
+        small: themeData.settings.typography.fontSizes.find(
+          (f) => f.slug === "small"
+        ).size,
+        base: themeData.settings.typography.fontSizes.find(
+          (f) => f.slug === "regular"
+        ).size,
+        lg: themeData.settings.typography.fontSizes.find(
+          (f) => f.slug === "large"
+        ).size,
+        xl: themeData.settings.typography.fontSizes.find((f) => f.slug === "xl")
+          .size,
+        "2xl": themeData.settings.typography.fontSizes.find(
+          (f) => f.slug === "xxl"
+        ).size,
+        "3xl": themeData.settings.typography.fontSizes.find(
+          (f) => f.slug === "xxxl"
+        ).size,
       },
       borderWidth: { default: "2px" },
       colors: {
-        primary: "#343A40",
-        secondary: "#FAB61F",
+        primary: themeData.settings.color.palette.find(
+          (c) => c.slug === "primary"
+        ).color,
+        secondary: themeData.settings.color.palette.find(
+          (c) => c.slug === "secondary"
+        ).color,
+        dark: themeData.settings.color.palette.find((c) => c.slug === "dark")
+          .color,
+        light: themeData.settings.color.palette.find((c) => c.slug === "light")
+          .color,
       },
     },
     screens: {

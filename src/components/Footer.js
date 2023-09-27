@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
           <div className="w-1/2 md:w-1/4">
             <Image
-              src="/contact-us.png"
+              src="https://staging.profici.co.uk/newprofici/wp-content/uploads/2023/08/contact-us.png"
               alt="Contact Us Image"
               width={500}
               height={300}
@@ -31,7 +31,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="flex items-center justify-start md:justify-center">
             <Image
-              src="/ProficiWhite.svg"
+              src="https://profici.co.uk/wp-content/uploads/2022/05/ProficiWhite.svg"
               alt="Profici Logo"
               width={128}
               height={64}
