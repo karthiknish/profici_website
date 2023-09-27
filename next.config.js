@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = { assetPrefix: "./", images: { unoptimized: true } };
+const nextConfig = {
+  assetPrefix: process.env.NODE_ENV === "production" ? "/profici" : "",
+  images: { unoptimized: true },
+};
 
 module.exports = nextConfig;
