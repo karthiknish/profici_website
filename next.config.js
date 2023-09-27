@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: process.argv.includes("export") ? "/profici" : "",
+  assetPrefix: process.argv.includes("export") ? "./" : "",
 
   images: { unoptimized: true },
 };
