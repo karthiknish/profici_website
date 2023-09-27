@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 const Footer = () => {
   return (
     <footer className="bg-primary text-white">
@@ -10,12 +11,12 @@ const Footer = () => {
               Do you want to grow your business?
             </h2>
             <p className="text-xl mb-6">Click below, we can do it together.</p>
-            <a
+            <Link
               href="/contact-us"
               className="bg-white text-primary px-6 py-2 rounded-full inline-flex items-center transition-transform duration-300 hover:-translate-y-1"
             >
               Contact Us
-            </a>
+            </Link>
           </div>
           <div className="w-1/2 md:w-1/4">
             <Image
@@ -80,9 +81,12 @@ const Footer = () => {
               Liverpool, L2 2QP <br />
               Phone: 0151 319 8550 <br />
               Email:{" "}
-              <a href="mailto:info@profici.co.uk" className="hover:underline">
+              <Link
+                href="mailto:info@profici.co.uk"
+                className="hover:underline"
+              >
                 info@profici.co.uk
-              </a>
+              </Link>
             </address>
           </div>
         </div>
