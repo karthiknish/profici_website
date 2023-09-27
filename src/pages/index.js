@@ -1,18 +1,10 @@
-import { useEffect } from "react";
-import { motion, useAnimation } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import React from "react";
+import { motion } from "framer-motion";
+// Add required imports for images or fetch data as needed
+
 function HomePage() {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-  });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start("visible");
-    }
-  }, [controls, inView]);
-
+  // Sample data for the services and clients sections.
+  // You can fetch this data from an API or import it from another module.
   const services = new Array(6).fill({
     image:
       "https://staging.profici.co.uk/newprofici/wp-content/uploads/2023/08/seo.png",
@@ -28,17 +20,7 @@ function HomePage() {
   return (
     <main>
       {/* First Section */}
-      <motion.section
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: 100 },
-        }}
-        transition={{ duration: 0.5 }}
-        className="bg-primary text-white py-16 lg:py-24 relative overflow-hidden"
-      >
+      <section className="bg-primary text-white py-16 lg:py-24 relative overflow-hidden">
         <div className="flex flex-wrap justify-center items-center px-12 lg:px-24 relative z-10">
           <div className="w-full md:w-1/2 px-8 text-center md:text-left">
             <p className="mb-4">
@@ -84,20 +66,10 @@ function HomePage() {
             fill="white"
           ></path>
         </svg>
-      </motion.section>
+      </section>
 
       {/* Second Section */}
-      <motion.section
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: 100 },
-        }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-wrap-reverse py-16 lg:py-24 px-12 lg:px-24"
-      >
+      <section className="flex flex-wrap-reverse py-16 lg:py-24 px-12 lg:px-24">
         <div className="w-full md:w-1/2 px-8">
           <img
             src="https://staging.profici.co.uk/newprofici/wp-content/uploads/2023/08/TomProficiEvent.png"
@@ -117,20 +89,10 @@ function HomePage() {
             into loyal customers and driving unparalleled growth.
           </p>
         </div>
-      </motion.section>
+      </section>
 
       {/* Services Section */}
-      <motion.section
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: 100 },
-        }}
-        transition={{ duration: 0.5 }}
-        className="py-16 lg:py-24 px-12 lg:px-24 bg-gray-100"
-      >
+      <section className="py-16 lg:py-24 px-12 lg:px-24 bg-gray-100">
         <h2 className="text-center text-4xl mb-16">Services</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {services.map((service, index) => (
@@ -148,20 +110,10 @@ function HomePage() {
             </div>
           ))}
         </div>
-      </motion.section>
+      </section>
 
       {/* Email Subscription Section */}
-      <motion.section
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: 100 },
-        }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-wrap py-16 lg:py-24 px-12 lg:px-24"
-      >
+      <section className="flex flex-wrap py-16 lg:py-24 px-12 lg:px-24">
         <div className="w-full lg:w-1/2 px-8 lg:pr-16">
           <p className="mb-4 text-lg">Your go-to marketing guide</p>
           <h1 className="text-4xl mb-6">
@@ -185,20 +137,10 @@ function HomePage() {
             className="w-full max-w-md mx-auto"
           />
         </div>
-      </motion.section>
+      </section>
 
       {/* Clients Section */}
-      <motion.section
-        ref={ref}
-        initial="hidden"
-        animate={controls}
-        variants={{
-          visible: { opacity: 1, y: 0 },
-          hidden: { opacity: 0, y: 100 },
-        }}
-        transition={{ duration: 0.5 }}
-        className="py-16 bg-gray-100 lg:py-24 px-16 lg:px-32"
-      >
+      <section className="py-16 bg-gray-100 lg:py-24 px-16 lg:px-32">
         <h2 className="text-center text-4xl mb-16">Our Clients</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {clients.map((client, index) => (
@@ -214,9 +156,7 @@ function HomePage() {
             </div>
           ))}
         </div>
-      </motion.section>
+      </section>
     </main>
   );
 }
-
-export default HomePage;
