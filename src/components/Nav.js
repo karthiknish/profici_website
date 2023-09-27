@@ -2,6 +2,7 @@ import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { useState } from "react";
+import Router from "next/router";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,7 +62,8 @@ const Navbar = () => {
         <motion.button
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-blue-500 text-white px-6 py-2 rounded-full hover:bg-blue-400"
+          onClick={() => Router.push("/contact-us")}
+          className="bg-secondary text-white px-6 py-2 rounded-full hover:bg-blue-400"
         >
           Get in Touch
         </motion.button>
