@@ -23,7 +23,11 @@ function HomePage() {
       <Head>
         <title>Profici</title>
       </Head>
-      <main>
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+      >
         {/* First Section */}
         <section className="bg-primary text-white py-16 lg:py-24 relative overflow-hidden">
           <div className="flex flex-wrap justify-center items-center px-12 lg:px-24 relative z-10">
@@ -162,7 +166,7 @@ function HomePage() {
             ))}
           </div>
         </section>
-      </main>
+      </motion.main>
     </>
   );
 }

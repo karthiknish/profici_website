@@ -9,7 +9,12 @@ export default function WhoWeAre({ teamMembers }) {
       <Head>
         <title>Who We Are</title>
       </Head>
-      <main className="py-16 px-4 sm:px-8 lg:px-24">
+      <motion.main
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="py-16 px-4 sm:px-8 lg:px-24"
+      >
         <h1 className="text-4xl mb-2 text-center">Who We Are</h1>
         <p className="text-center mb-12 text-gray-600">
           Part family, part well-oiled machine; our team is a close-knit group
@@ -40,7 +45,7 @@ export default function WhoWeAre({ teamMembers }) {
             </Link>
           ))}
         </div>
-      </main>
+      </motion.main>
     </>
   );
 }
