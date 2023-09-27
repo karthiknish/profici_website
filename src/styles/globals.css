@@ -1,10 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-h1,
+@font-face {
+  font-family: "Stozl";
+  src: url("../../public/fonts/Stolzl-Bold.ttf") format("truetype");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Stozl";
+  src: url("../../public/fonts/Stolzl-Regular.ttf") format("truetype");
+  font-weight: 500; /* Bold */
+  font-style: normal;
+}
+h1 {
+  font-family: "Stozl", sans-serif;
+  font-weight: 700;
+}
 h2 {
-  font-family: "Signika", sans-serif;
+  font-family: "Stozl", sans-serif;
+  font-weight: 500;
 }
 body {
   font-family: "Inter", sans-serif;
