@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  assetPrefix: process.argv.includes("export") ? "./" : "",
-
+  assetPrefix: process.env.NODE_ENV === "production" ? "/profici" : "",
+  basePath: process.env.NODE_ENV === "production" ? "/profici" : "",
   images: { unoptimized: true },
 };
 
