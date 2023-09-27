@@ -64,9 +64,9 @@
       ],
       "fontFamilies": [
         {
-          "fontFamily": "Stolzl, Arial, sans-serif",
-          "slug": "stolzl",
-          "name": "Headings - Stolzl"
+          "fontFamily": "'Signika', sans-serif",
+          "slug": "signika",
+          "name": "Headings - Signika"
         },
         {
           "fontFamily": "'Inter', sans-serif",
@@ -78,49 +78,49 @@
   },
   "styles": {
     "typography": {
-      "fontFamily": "var(--wp--preset--font-family--inter) !important",
+      "fontFamily": "var(--font-family-inter) !important",
       "lineHeight": "1",
       "fontSize": "1rem"
     },
     "elements": {
       "h1": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--stolzl) !important",
+          "fontFamily": "var(--font-family-signika) !important",
           "fontWeight": "800",
           "fontSize": "2.25rem"
         }
       },
       "h2": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--stolzl)",
+          "fontFamily": "var(--font-family-signika)",
           "fontWeight": "700",
           "fontSize": "2.2rem"
         }
       },
       "h3": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontFamily": "var(--font-family-inter) !important",
           "fontWeight": "600",
           "fontSize": "1.25rem"
         }
       },
       "h4": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontFamily": "var(--font-family-inter) !important",
           "fontWeight": "500",
           "fontSize": "1rem"
         }
       },
       "h5": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontFamily": "var(--font-family-inter) !important",
           "fontWeight": "500",
           "fontSize": "0.875rem"
         }
       },
       "h6": {
         "typography": {
-          "fontFamily": "var(--wp--preset--font-family--inter)",
+          "fontFamily": "var(--font-family-inter) !important",
           "fontWeight": "500",
           "fontSize": "0.75rem"
         }

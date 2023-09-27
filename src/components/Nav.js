@@ -51,7 +51,7 @@ const Navbar = () => {
             ))}
           </div>
         </div>
-        <Link href="/">
+        <Link className="lg:hidden" href="/">
           <img
             src="/Proficiwhite.svg"
             alt="Profici Logo"
