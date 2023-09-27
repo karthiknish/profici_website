@@ -50,7 +50,7 @@ const NewProjectButton = () => {
   return (
     <>
       {/* Button Component */}
-      <div className="fixed bottom-4 right-4 z-20">
+      <div className="fixed bottom-4 right-4 z-10">
         <button
           onClick={() => setIsOpen(true)}
           className="relative overflow-hidden bg-yellow-500 hover:bg-white hover:text-yellow-500 text-white p-4 rounded-full shadow-xl focus:outline-none w-36 h-36 flex items-center justify-center transform transition-transform duration-300 hover:scale-110"
@@ -70,7 +70,11 @@ const NewProjectButton = () => {
               fill="none"
             ></path>
             <text>
-              <textPath xlinkHref="#circlePath" className="text-xs opacity-50">
+              <textPath
+                style={{ fontSize: "0.5rem" }}
+                xlinkHref="#circlePath"
+                className="opacity-50"
+              >
                 <tspan x="0" dy="0">
                   ELEVATE YOUR BRAND
                 </tspan>
@@ -88,15 +92,15 @@ const NewProjectButton = () => {
         {isOpen && (
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 0.7 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 items-center justify-center p-4 bg-black z-50 overflow-hidden"
+            className="fixed inset-0 flex items-center justify-center p-4 bg-black z-50 overflow-hidden"
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white rounded-lg p-6 w-full h-auto lg:h-full"
+              className="bg-white rounded-lg p-6 w-full h-auto lg:h-full flex flex-col lg:flex-row"
             >
               <span
                 onClick={() => setIsOpen(false)}
@@ -104,17 +108,94 @@ const NewProjectButton = () => {
               >
                 &times;
               </span>
-              <form onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  name="yourName"
-                  value={formData.yourName}
-                  onChange={handleInputChange}
-                  placeholder="Your Name"
-                />
-                {/* Add other form fields similarly */}
-                <button type="submit">Send</button>
-              </form>
+              <div className="lg:w-1/2 w-full p-4 flex flex-col justify-center items-center">
+                <h1 className="text-4xl">
+                  Let us help you get your project started
+                </h1>
+                <a
+                  className="text-blue-500 text-xl underline cursor-pointer"
+                  href="mailto:info@profici.co.uk"
+                >
+                  info@profici.co.uk
+                </a>
+              </div>
+              <div className="lg:w-1/2 w-full p-4">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <h1 className="text-2xl mb-4">Contact Us</h1>
+                  <div className="flex flex-col space-y-4">
+                    <input
+                      type="text"
+                      name="username"
+                      value={formData.username}
+                      onChange={handleInputChange}
+                      placeholder="Name*"
+                      required
+                      className="px-4 py-2 border rounded-lg focus:outline-none focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+                    />
+                    <input
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      placeholder="Email Address*"
+                      required
+                      className="px-4 py-2 border rounded-lg focus:outline-none focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+                    />
+                    <input
+                      type="text"
+                      name="company"
+                      value={formData.company}
+                      onChange={handleInputChange}
+                      placeholder="Company"
+                      className="px-4 py-2 border rounded-lg focus:outline-none focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+                    />
+                    <input
+                      type="tel"
+                      name="phone"
+                      value={formData.phone}
+                      onChange={handleInputChange}
+                      placeholder="Phone Number"
+                      className="px-4 py-2 border rounded-lg focus:outline-none focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+                    />
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      placeholder="How can we help?*"
+                      required
+                      rows="4"
+                      className="px-4 py-2 border rounded-lg focus:outline-none focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-50"
+                    />
+                  </div>
+
+                  <div className="communication_terms mt-4">
+                    <input
+                      type="checkbox"
+                      name="communication"
+                      id="communication"
+                      checked={formData.communication}
+                      onChange={handleCheckboxChange}
+                      className="mr-2"
+                    />
+                    <label
+                      htmlFor="communication"
+                      className="inline-flex items-center"
+                    >
+                      If you would like to receive further marketing
+                      communication from Profici regarding our news, industry
+                      updates, events, guides, training opportunities and our
+                      services, please tick the box.
+                    </label>
+                  </div>
+                  {/* You need to handle recaptcha separately, as it can't be directly included like this */}
+                  <button
+                    type="submit"
+                    className="bg-secondary text-white px-6 py-2 rounded-full hover:bg-secondary-400 mt-4"
+                  >
+                    Get In Touch
+                  </button>
+                </form>
+              </div>
             </motion.div>
           </motion.div>
         )}

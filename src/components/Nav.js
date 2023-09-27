@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="flex items-center space-x-4 ">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-white z-20"
+            className="lg:hidden text-white z-30"
           >
             {isOpen ? (
               <AiOutlineClose size={24} />
@@ -69,7 +69,7 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="fixed inset-0 z-10 bg-gray-800 bg-opacity-95 flex flex-col items-center justify-center lg:hidden"
+            className="fixed inset-0 z-20 bg-gray-800 bg-opacity-95 flex flex-col items-center justify-center lg:hidden"
             initial="closed"
             animate="open"
             exit="closed"
