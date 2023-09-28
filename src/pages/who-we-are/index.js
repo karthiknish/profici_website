@@ -4,15 +4,30 @@ import Head from "next/head";
 import Link from "next/link";
 
 export default function WhoWeAre({ teamMembers }) {
+  const containerVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        type: "spring",
+        damping: 20,
+        stiffness: 100,
+      },
+    },
+    exit: { opacity: 0, y: -50 },
+  };
+
   return (
     <>
       <Head>
         <title>Who We Are</title>
       </Head>
       <motion.main
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
+        variants={containerVariants}
         className="py-16 px-4 sm:px-8 lg:px-24"
       >
         <h1 className="text-4xl mb-2 text-center">Who We Are</h1>
@@ -51,7 +66,7 @@ export default function WhoWeAre({ teamMembers }) {
 }
 
 export async function getStaticProps() {
-  const teamMembers = await import("../../../public/team.json");
+  const teamMembers = await import("../../team.json");
   return {
     props: {
       teamMembers: teamMembers.default,
