@@ -100,7 +100,7 @@ const NewProjectButton = () => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
-              className="bg-white rounded-lg p-6 w-full h-auto lg:h-full flex flex-col lg:flex-row"
+              className="bg-white rounded-lg p-4 sm:p-6 max-w-full w-full sm:w-3/4 lg:w-1/2 max-h-screen overflow-y-auto flex flex-col"
             >
               <span
                 onClick={() => setIsOpen(false)}
@@ -108,20 +108,23 @@ const NewProjectButton = () => {
               >
                 &times;
               </span>
-              <div className="lg:w-1/2 w-full p-4 flex flex-col justify-center items-center">
-                <h1 className="text-4xl">
+              <div className="w-full p-2 sm:p-4 flex flex-col justify-center items-center">
+                <h1 className="text-2xl sm:text-4xl text-center">
                   Let us help you get your project started
                 </h1>
                 <a
-                  className="text-blue-500 text-xl underline cursor-pointer"
+                  className="text-blue-500 text-sm sm:text-xl underline cursor-pointer"
                   href="mailto:info@profici.co.uk"
                 >
                   info@profici.co.uk
                 </a>
               </div>
-              <div className="lg:w-1/2 w-full p-4">
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <h1 className="text-2xl mb-4">Contact Us</h1>
+              <div className="w-full p-2 sm:p-4">
+                <form
+                  onSubmit={handleSubmit}
+                  className="space-y-2 sm:space-y-4"
+                >
+                  <h1 className="text-xl sm:text-2xl mb-2">Contact Us</h1>
                   <div className="flex flex-col space-y-4">
                     <input
                       type="text"
@@ -190,7 +193,7 @@ const NewProjectButton = () => {
                   {/* You need to handle recaptcha separately, as it can't be directly included like this */}
                   <button
                     type="submit"
-                    className="bg-secondary text-white px-6 py-2 rounded-full hover:bg-secondary-400 mt-4"
+                    className="bg-secondary text-white px-4 sm:px-6 py-2 rounded-full hover:bg-secondary-400 mt-2 sm:mt-4"
                   >
                     Get In Touch
                   </button>
