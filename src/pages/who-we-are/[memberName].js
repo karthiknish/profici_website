@@ -1,11 +1,14 @@
 import { teamMembers } from "../../../public/team.json";
 import { motion } from "framer-motion";
-
+import Head from "next/head";
 const MemberDetail = ({ member }) => {
   if (!member) return <p>Team member not found.</p>;
 
   return (
     <>
+    <Head>
+      <title>Team Member</title>
+    </Head>
       <motion.main className="py-16 px-8 lg:px-24">
         <motion.div className="flex flex-wrap justify-center items-center">
           <motion.div className="w-full md:w-1/2 px-8 mb-8 md:mb-0">
