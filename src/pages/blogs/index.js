@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useQuery } from "react-query";
 import { getAllPostsForHome } from "../../lib/api"; // Adjust the import path accordingly
-
+import Head from "next/head";
 const PAGE_SIZE = 10; // Number of posts per page
 
 function BlogPage() {
