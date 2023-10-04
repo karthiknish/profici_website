@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 @font-face {
   font-family: "Stozl";
   src: url("../../public/fonts/Stolzl-Bold.ttf") format("truetype");
