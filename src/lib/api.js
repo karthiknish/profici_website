@@ -1,4 +1,4 @@
-const API_URL = process.env.WORDPRESS_API_URL;
+const API_URL = "https://profici.co.uk/graphql";
 
 async function fetchAPI(query = "", { variables } = {}) {
   const headers = { "Content-Type": "application/json" };
@@ -98,7 +98,7 @@ export async function getAllPostsForHome(preview) {
       },
     }
   );
-
+  console.log(data);
   return data?.posts;
 }
 
@@ -208,6 +208,6 @@ export async function getPostAndMorePosts(slug, preview, previewData) {
   data.posts.edges = data.posts.edges.filter(({ node }) => node.slug !== slug);
   // If there are still 3 posts, remove the last one
   if (data.posts.edges.length > 2) data.posts.edges.pop();
-
+  console.log(data);
   return data;
 }

@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import { AnimatePresence } from "framer-motion";
 import NewProjectButton from "@/components/NewProjectButton";
 import { QueryClient, QueryClientProvider } from "react-query";
-
+import "react-loading-skeleton/dist/skeleton.css";
 function MyApp({ Component, pageProps }) {
   const queryClient = new QueryClient();
   return (
